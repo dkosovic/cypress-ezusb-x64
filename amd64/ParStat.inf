@@ -1,15 +1,16 @@
 ; Installation INF for the Cypress Generic USB Driver for Windows Vista
-; Processor support for OS unknown platforms.
+; Princeton Applied Research USB Devices.
+; Processor support for %PLATFORM% platforms.
 ;
-; (c) Copyright 2009 Cypress Semiconductor Corporation
+; (c) Copyright 2009, 2012, 2013 Cypress Semiconductor Corporation
 ;
 
 [Version]
 Signature="$WINDOWS NT$"
 Class=USB
-ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+ClassGUID={465D9AAB-821F-4c0d-B4ED-D1010AA970D9}
 provider=%CYUSB_Provider%
-CatalogFile=LuLaUsb.cat
+CatalogFile=ParStat.cat
 DriverVer=06/05/2009,3.4.1.20
 
 [SourceDisksNames]
@@ -29,30 +30,22 @@ ExcludeFromSelect = *
 
 ;for all platforms
 [Device]
-%VID_0E36&PID_E000.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E000
-%VID_0E36&PID_E001.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E001
-;%VID_XXXX&PID_XXXX.DeviceDesc%=CyUsb, USB\VID_XXXX&PID_XXXX
-
-
-;for windows 2000 non intel platforms
-[Device.NT]
-%VID_0E36&PID_E000.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E000
-%VID_0E36&PID_E001.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E001
-;%VID_XXXX&PID_XXXX.DeviceDesc%=CyUsb, USB\VID_XXXX&PID_XXXX
-
+%VID_0A2D&PID_000A.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_000A
+%VID_0A2D&PID_0011.DeviceDesc%=CyUsb, USB\VID_0A2DPID_0011
+%VID_0A2D&PID_0012.DeviceDesc%=CyUsb, USB\VID_0A2DPID_0012
 
 ;for x86 platforms
 [Device.NTx86]
-%VID_0E36&PID_E000.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E000
-%VID_0E36&PID_E001.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E001
-;%VID_XXXX&PID_XXXX.DeviceDesc%=CyUsb, USB\VID_XXXX&PID_XXXX
+%VID_0A2D&PID_000A.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_000A
+%VID_0A2D&PID_0011.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_0011
+%VID_0A2D&PID_0012.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_0012
 
 
 ;for x64 platforms
 [Device.NTamd64]
-%VID_0E36&PID_E000.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E000
-%VID_0E36&PID_E001.DeviceDesc%=CyUsb, USB\VID_0E36&PID_E001
-;%VID_XXXX&PID_XXXX.DeviceDesc%=CyUsb, USB\VID_XXXX&PID_XXXX
+%VID_0A2D&PID_000A.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_000A
+%VID_0A2D&PID_0011.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_0011
+%VID_0A2D&PID_0012.DeviceDesc%=CyUsb, USB\VID_0A2D&PID_0012
 
 
 [CYUSB]
@@ -74,7 +67,6 @@ AddReg=CYUSB.AddReg.Guid
 
 [CYUSB.NT.Services]
 Addservice = CYUSB,2,CYUSB.AddService
-
 
 [CYUSB.NTx86]
 CopyFiles=CYUSB.Files.Ext
@@ -123,12 +115,13 @@ ezusb.sys
 ;HKR,,DriverGUID,,%CYUSB.GUID%
 
 [Strings]
-CYUSB_Provider    = "Cypress"
-CYUSB_Company     = "Cypress Semiconductor Corporation"
-CYUSB_Description = "Cypress Generic USB Driver"
-CYUSB_DisplayName = "Cypress USB Generic"
-CYUSB_Install     = "Cypress CYUSB Driver Installation Disk"
-VID_0E36&PID_E000.DeviceDesc="LuLaUsb Boot"
-VID_0E36&PID_E001.DeviceDesc="LuLaUsb Firmware"
+CYUSB_Provider    = "AMETEK"
+CYUSB_Company     = "Princeton Applied Research"
+CYUSB_Description = "PAR USB Driver(ezusb.sys)"
+CYUSB_DisplayName = "Princeton Applied Research USB Driver"
+CYUSB_Install     = "PAR USB Driver Installation Disk"
+VID_0A2D&PID_000A.DeviceDesc="PARSTAT 2263"
+VID_0A2D&PID_0011.DeviceDesc="PARSTAT 2273"
+VID_0A2D&PID_0012.DeviceDesc="PARSTAT 2253"
 CYUSB.GUID="{AE18AA60-7F6A-11d4-97DD-00010229B959}"
 CYUSB_Unused      = "."
