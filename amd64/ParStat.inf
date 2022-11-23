@@ -1,5 +1,4 @@
-; Installation INF for the Cypress Generic USB Driver for Windows Vista
-; Princeton Applied Research USB Devices.
+; Installation INF for the Princeton Applied Research USB Driver
 ; Processor support for %PLATFORM% platforms.
 ;
 ; (c) Copyright 2009, 2012, 2013 Cypress Semiconductor Corporation
