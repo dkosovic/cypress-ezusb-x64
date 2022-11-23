@@ -7,7 +7,7 @@
 [Version]
 Signature="$WINDOWS NT$"
 Class=USB
-ClassGUID={465D9AAB-821F-4c0d-B4ED-D1010AA970D9}
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
 provider=%CYUSB_Provider%
 CatalogFile=ParStat.cat
 DriverVer=06/05/2009,3.4.1.20
